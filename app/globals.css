@@ -1,0 +1,38 @@
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(20, 184, 166, 0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 bg-clip-text text-transparent animate-gradient;
+    background-size: 200% auto;
+  }
+  
+  .glass-card {
+    @apply bg-white/10 dark:bg-slate-800/30 backdrop-blur-md border border-white/20 dark:border-slate-700/50 shadow-xl;
+  }
+}
